@@ -1,16 +1,79 @@
-# React + Vite
+# Weather Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple weather app built with React, Vite and Material UI. Search any city to see its current weather. The card image and icon change based on the weather (hot, cold or rainy).
 
-Currently, two official plugins are available:
+**Live demo:** https://hlozaid.github.io/weather-widget-reactApp/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Search weather by city name
+- Shows temperature, min/max temperature, humidity, "feels like" and a weather description
+- Background image and Material UI icon change for hot, cold and rainy conditions
+- Error message when a city is not found
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Material UI (`@mui/material`, `@mui/icons-material`)
+- OpenWeatherMap API
+- GitHub Pages (deployed with `gh-pages`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/hlozaid/weather-widget-reactApp.git
+cd weather-widget-reactApp
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Add your API key
+
+Get a free API key from [OpenWeatherMap](https://openweathermap.org/api), then create a `.env` file in the project root:
+
+```
+VITE_API_KEY=your_api_key_here
+```
+
+### 4. Run the app
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal (usually http://localhost:5173).
+
+## Deployment
+
+The app is deployed on GitHub Pages using the `gh-pages` package.
+
+```bash
+npm run deploy
+```
+
+Make sure `base` in `vite.config.js` matches the repository name:
+
+```js
+base: '/weather-widget-reactApp/',
+```
+
+## Project Structure
+
+```
+src/
+├── Weather.jsx     # Main component, holds weather state
+├── SearchBox.jsx   # Search input and API call
+├── InfoBox.jsx     # Weather card (image, icon, details)
+└── ...
+```
+
+## Author
+
+**Mohd Zaid** - [@hlozaid](https://github.com/hlozaid)
